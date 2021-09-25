@@ -1,1 +1,0 @@
-const telegramBot = require("telebot");
