@@ -1,10 +1,7 @@
 {
   "name": "tele-bot-livescore",
   "version": "1.0.0",
-  "engines": {
-    "node": "12"
-  },
-  "description": "",
+  "description": "A Telegram bot that return the fixtures of Real Madrid",
   "engines": {
     "node": "16.x",
     "npm": "7.x"
