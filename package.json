@@ -1,11 +1,14 @@
 {
   "name": "tele-bot-livescore",
   "version": "1.0.0",
+  "engines": {
+    "node": "12"
+  },
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "start": "node app.js"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +16,9 @@
   "dependencies": {
     "axios": "^0.21.4",
     "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "firebase-admin": "^9.12.0",
+    "firebase-functions": "^3.15.7",
     "http": "^0.0.1-security",
     "nodemon": "^2.0.13",
     "telebot": "^1.4.1"
