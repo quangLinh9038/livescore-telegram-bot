@@ -21,7 +21,7 @@ const formatDate = (date) => {
 
 const formatISOTimestamp = (ts) => {
   const milliseconds = 1000;
-  var timestamp = new Date(ts * milliseconds).toString();
+  var timestamp = new Date(ts * milliseconds).toISOString();
   return timestamp;
 };
 const today = new Date();
