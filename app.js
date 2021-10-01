@@ -22,6 +22,9 @@ const formatDate = (date) => {
 const formatISOTimestamp = (ts) => {
   const milliseconds = 1000;
   var timestamp = new Date(ts * milliseconds).toISOString();
+  
+  timestamp.toLocaleString('en-US', { timeZone: 'Indochina Time' });
+
   return timestamp;
 };
 const today = new Date();
