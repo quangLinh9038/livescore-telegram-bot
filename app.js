@@ -24,16 +24,14 @@ const formatISOTimestamp = (ts) => {
   var timestamp = new Date(ts * milliseconds).toString();
   return timestamp;
 };
-
 const today = new Date();
-
-// the previous 3 days
+// the previous days
 var fromDate = new Date(today);
-fromDate.setDate(today.getDate() - 4);
+fromDate.setDate(today.getDate() - 7);
 
-// the next 3 days
+// the next days
 var toDate = new Date(today);
-toDate.setDate(today.getDate() + 3);
+toDate.setDate(today.getDate() + 7);
 
 /* 
  Request options
@@ -42,7 +40,7 @@ var options = {
   method: "GET",
   url: "https://api-football-v1.p.rapidapi.com/v3/fixtures",
   params: {
-    season: "2021",
+    season: today.getFullYear(),
     team: "541",
     from: formatDate(fromDate),
     to: formatDate(toDate),
@@ -83,9 +81,9 @@ const prepareData = async (data) => {
 
     var _timestamp = formatISOTimestamp(timestamp);
 
-    var _fixtures = `FIXTURES\n Date: ${_timestamp},\n Status: ${status.long},\n Stadium: ${venue.name},\n League: ${league.name}`;
+    var _fixtures = `FIXTURES\n Date: ${_timestamp},\n Status: ${status.long},\n Stadium: ${venue.name},\n League: ${league.name},\n Round: ${league.round}\n`;
 
-    var _teams = `\n\nHOME: ${teams.home.name} (${home}) vs AWAY: ${teams.away.name} (${away}) \n\n\n`;
+    var _teams = `\n\nHOME: ${teams.home.name} (${home}) - AWAY: ${teams.away.name} (${away})\n\n\n`;
 
     const results = _fixtures.concat(_teams);
     return results;
