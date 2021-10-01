@@ -1,1 +1,3 @@
-# livescore-telegram-bot
+Livescore Telegram Bot
+
+Nguyen Quang Linh
